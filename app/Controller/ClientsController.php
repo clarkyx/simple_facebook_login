@@ -1,8 +1,22 @@
 <?php
 class ClientsController extends AppController{
-	public $helpers = array('Html', 'Form');
+	public $helpers = array('Html', 'Form', 'Session');
+	public $components = array('Session');
 
 	public function index(){
 		$this->set('clients',$this->Client->find('all'));
 	}
+
+	public function newclient(){
+		if($this->request->is('post')){
+			$this->Client->create();
+			if($this->Client->save($this->request->data)){
+				$this->Session->setFlash(__('New client information successfuly added.'));
+				return $this->redirect(array('action'=>'index'));
+			}
+			$this->Session->setFlash(__('Cannot add new client information'));
+		}
+	}
+
+
 }
