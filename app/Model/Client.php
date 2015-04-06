@@ -1,4 +1,2 @@
 <?php
-class Client extends AppModel{
-
-}
+class Client extends AppModel{}
