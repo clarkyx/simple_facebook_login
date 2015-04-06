@@ -4,7 +4,7 @@
 		<title>Login</title>
 		<script type="text/javascript">
 		$(document).ready(function(){
-			$('#Usermanager').change(function(){
+			$('#UserManager').change(function(){
 				if($(this).is(':checked')){
 					$('#UserReferenceCode').fadeIn();
 				}
@@ -14,9 +14,9 @@
 	</head>
 	<body>
 		<div class="users form">
+			<?php echo $this->Form->create("User"); ?>
 			<fieldset>
 				<legend><?php echo __('Register'); ?><legend>
-				<?php echo $this->Form->create("User"); ?>
 				<?php echo $this->Form->input('username');
 				 	  echo $this->Form->input('password');
 				 	  echo $this->Form->input('manager',array('type'=>'checkbox'));
