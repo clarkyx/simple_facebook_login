@@ -1,7 +1,7 @@
 <?php
 // app/Model/User.php
 App::uses('AppModel','Model');
-pp::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
+App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
 
 class User extends AppModel{
 	public $validate = array(
