@@ -6,6 +6,7 @@
 	<body>
 		<table>
 			<tr>
+				<th>Id</th>
 				<th>CompanyName</th>
 				<th>Address</th>
 				<th>Phone</th>
