@@ -9,8 +9,5 @@
 	echo $this->Form->input('phone');
 	echo $this->Form->end('Save');
 	?>
-	<?php
-	echo $this->Html->link('Add New Client', array('controller'=>'clients','action'=>'newclient'));
-	 ?>
 </body>
 </html>
