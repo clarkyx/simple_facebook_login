@@ -22,5 +22,8 @@
 		<?php endforeach; ?>
 		<?php unset($client); ?>
 		</table>
+		<?php
+		echo $this->Html->link('Add New Client', array('controller'=>'clients','action'=>'newclient'));
+	 	?>
 	</body>
 </html>
