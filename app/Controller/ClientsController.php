@@ -18,7 +18,7 @@ class ClientsController extends AppController{
 		}
 	}
 
-	public function deleteclient(){
+	public function deleteclient($id){
 		if($this->request->is('get')){
 			throw new MethodNotAllowedException();
 		}
