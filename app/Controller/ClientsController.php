@@ -24,7 +24,7 @@ class ClientsController extends AppController{
 		}
 
 		try {
-			$curclient = $this->clients->findById($id);
+			$curclient = $this->Client->findById($id);
 		} catch (Exception $e){
 			$this->Session->setFlash(__('client is already been removed'));
 		}
