@@ -29,7 +29,7 @@ class ClientsController extends AppController{
 			$this->Session->setFlash(__('client is already been removed'));
 		}
 
-		if($this->Post->delete($id)){
+		if($this->Client->delete($id)){
 			$this->Session->setFlash(__('Deleted client %s.', h($curclient->$companyname)));
 		}else{
 			$this->Session->setFlash(__('Cannot delete client %s',h($curclient->$companyname)));
