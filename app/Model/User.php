@@ -12,7 +12,7 @@ Class User extends AppModel{
 		'password' => array(
 			'required' => array(
 				'rule' => array('notEmpty'),
-				'message' => ('Need a password')
+				'message' => 'Need a password'
 				)
 			),
 		'role' => array(
