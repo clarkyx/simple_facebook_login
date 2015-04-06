@@ -26,7 +26,7 @@
                     	array('confirm' => (__(
                     		'Delete client %s ?', $client['Client']['companyname'])))
 					); ?>
-					<?php echo $this->Form->link(
+					<?php echo $this->Html->link(
 						'Edit Client',
 						array('action'=>'editclient', $client['Client']['id'])
 					); ?>
