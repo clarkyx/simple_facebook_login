@@ -19,7 +19,7 @@ class UsersController extends AppController{
 				return $this->redirect(array('action'=>'index'));
 			}
 
-			$this-.Session->setFlash(
+			$this->Session->setFlash(
 				__('Account creation failed, please try again'));
 		}
 	}
