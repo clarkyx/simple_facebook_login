@@ -49,7 +49,7 @@ class ClientsController extends AppController{
 				$this->Session->setFlash(__('Client Information Succcessfully Updated.'));
 				return $this->redirect(array('action'=>'index'));
 			}
-			$this->Session->setFlash(__('Unable to Update Client Information.'))
+			$this->Session->setFlash(__('Unable to Update Client Information.'));
 		}
 
 		if(!$this->request->data){
