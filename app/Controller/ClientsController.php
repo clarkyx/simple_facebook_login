@@ -23,16 +23,10 @@ class ClientsController extends AppController{
 			throw new MethodNotAllowedException();
 		}
 
-		try {
-			$curclient = $this->Client->findById($id);
-		} catch (Exception $e){
-			$this->Session->setFlash(__('client is already been removed'));
-		}
-
 		if($this->Client->delete($id)){
-			$this->Session->setFlash(__('Deleted client %s.', h($curclient->$companyname)));
+			$this->Session->setFlash('Client Deleted.');
 		}else{
-			$this->Session->setFlash(__('Cannot delete client %s',h($curclient->$companyname)));
+			$this->Session->setFlash('Cannot delete client %s');
 		}
 
 		return $this->redirect(array('action'=>'index'));
