@@ -21,7 +21,6 @@
 				 	  echo $this->Form->input('password');
 				 	  echo $this->Form->checkbox('manager');
 				 	  echo $this->Form->input('ReferenceCode', array('hiddenField'=>True));
-				 	  );
 				?>
 			</fieldset>
 			<?php echo $this->Form->end(__('Register')); ?>
