@@ -28,7 +28,7 @@
 					); ?>
 					<?php echo $this->Form->link(
 						'Edit Client',
-						array('action'=>'editclient', $client['Client']['id']),
+						array('action'=>'editclient', $client['Client']['id'])
 					); ?>
 				</td>	
 			</tr>
