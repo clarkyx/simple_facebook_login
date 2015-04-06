@@ -10,6 +10,7 @@
 				<th>CompanyName</th>
 				<th>Address</th>
 				<th>Phone</th>
+				<th>Actions</th>
 			</tr>
 
 
@@ -28,7 +29,6 @@
 				</td>	
 			</tr>
 		<?php endforeach; ?>
-		<?php unset($client); ?>
 		</table>
 		<?php
 		echo $this->Html->link('Add New Client', array('controller'=>'clients','action'=>'newclient'));
