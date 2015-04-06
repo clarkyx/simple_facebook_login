@@ -71,10 +71,10 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+		'host' => 'us-cdbr-azure-west-a.cloudapp.net',
+		'login' => 'bf72d27ffe3cd4',
+		'password' => 'a053eab7',
+		'database' => 'as_c58524e2aa00b96',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
