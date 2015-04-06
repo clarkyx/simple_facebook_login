@@ -4,9 +4,9 @@
 		<title>Login</title>
 		<script type="text/javascript">
 		$(document).ready(function(){
-			$('#manager').change(function(){
+			$('#Usermanager').change(function(){
 				if($(this).is(':checked')){
-					$('#ReferenceCode').fadeIn();
+					$('#UserReferenceCode').fadeIn();
 				}
 			});
 		});
@@ -19,8 +19,8 @@
 				<?php echo $this->Form->create("User"); ?>
 				<?php echo $this->Form->input('username');
 				 	  echo $this->Form->input('password');
-				 	  echo $this->Form->checkbox('manager');
-				 	  echo $this->Form->input('ReferenceCode', array('hiddenField'=>True));
+				 	  echo $this->Form->input('manager',array('type'=>'checkbox'));
+				 	  echo $this->Form->input('ReferenceCode', array('type'=>'hidden'));
 				?>
 			</fieldset>
 			<?php echo $this->Form->end(__('Register')); ?>
