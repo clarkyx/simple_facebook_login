@@ -26,7 +26,7 @@ class ClientsController extends AppController{
 		if($this->Client->delete($id)){
 			$this->Session->setFlash('Client Deleted.');
 		}else{
-			$this->Session->setFlash('Cannot delete client %s');
+			$this->Session->setFlash('Cannot delete client.');
 		}
 
 		return $this->redirect(array('action'=>'index'));
