@@ -18,6 +18,13 @@
 				<td><?php echo $client['Client']['companyname']; ?></td>
 				<td><?php echo $client['Client']['address']; ?></td>
 				<td><?php echo $client['Client']['phone']; ?></td>
+				<td><?php echo $this->Form->postLink(
+                    'Delete Client',
+                    array('action'=>'deleteclient', $client['Client']['id']),
+                    array('confirm' => (__(
+                    	'Delete client %s ?', client['Client']['companyname']))
+					); ?>
+				</td>	
 			</tr>
 		<?php endforeach; ?>
 		<?php unset($client); ?>
