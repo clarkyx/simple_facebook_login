@@ -7,7 +7,7 @@ class ClientsController extends AppController{
 		$this->set('clients',$this->Client->find('all'));
 	}
 
-	public function newclient(){
+	protected function newclient(){
 		if($this->request->is('post')){
 			$this->Client->create();
 			if($this->Client->save($this->request->data)){
@@ -18,7 +18,7 @@ class ClientsController extends AppController{
 		}
 	}
 
-	public function deleteclient(){
+	protected function deleteclient(){
 		if($this->request->is('get')){
 			throw new MethodNotAllowedException();
 		}
