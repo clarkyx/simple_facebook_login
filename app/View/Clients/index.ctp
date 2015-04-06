@@ -21,10 +21,14 @@
 				<td><?php echo $client['Client']['address']; ?></td>
 				<td><?php echo $client['Client']['phone']; ?></td>
 				<td><?php echo $this->Form->postLink(
-                    'Delete Client',
-                    array('action'=>'deleteclient', $client['Client']['id']),
-                    array('confirm' => (__(
-                    	'Delete client %s ?', $client['Client']['companyname'])))
+                    	'Delete Client',
+                   	 	array('action'=>'deleteclient', $client['Client']['id']),
+                    	array('confirm' => (__(
+                    		'Delete client %s ?', $client['Client']['companyname'])))
+					); ?>
+					<?php echo $this->Form->link(
+						'Edit Client',
+						array('action'=>'editclient', $client['Client']['id']),
 					); ?>
 				</td>	
 			</tr>

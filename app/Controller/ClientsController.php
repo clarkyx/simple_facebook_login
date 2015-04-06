@@ -31,4 +31,29 @@ class ClientsController extends AppController{
 
 		return $this->redirect(array('action'=>'index'));
 	}
+
+	public function editclient($id = null){
+		if(!$id){
+			throw new NotFoundException(__('Invalid client'));
+		}
+
+		$client = $this->Client->findById($id);
+		if(!$client){
+			throw new NotFoundException(__('Invalid client'));
+		}
+
+
+		if($this->request->is(array('put', 'post'))){
+			$this->Client->id = $id;
+			if($this->Client->save($this->request->data)){
+				$this->Session->setFlash(__('Client Information Succcessfully Updated.'));
+				return $this->redirect(array('action'=>'index'));
+			}
+			$this->Session->setFlash(__('Unable to Update Client Information.'))
+		}
+
+		if(!$this->request->data){
+			$this->request->data = $client;
+		}
+	}
 }
