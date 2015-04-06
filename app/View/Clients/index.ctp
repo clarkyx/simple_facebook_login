@@ -22,7 +22,7 @@
                     'Delete Client',
                     array('action'=>'deleteclient', $client['Client']['id']),
                     array('confirm' => (__(
-                    	'Delete client %s ?', client['Client']['companyname']))
+                    	'Delete client %s ?', $client['Client']['companyname']))
 					); ?>
 				</td>	
 			</tr>
