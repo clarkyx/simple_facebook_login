@@ -113,6 +113,8 @@ class UsersController extends AppController{
 				return $this->redirect(array('action'=>'login'));
 			}
 		}
+			$this->Session->setFlash(__('SOMETHIGN WRONG HERE'));
+
 	}
 
 }
