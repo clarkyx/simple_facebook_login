@@ -48,14 +48,14 @@ class UsersController extends AppController{
 	public function login(){
 		if($this->request->is('post')){
 			if($this->Auth->login()){
-				return $this->redirect($this->Auth->redirectUrl());
+				return $this->redirect($this->Auth->loginRedirect);
 			}
 			$this->Session->setFlash(__('Wrong username and password combination, please try again'));
 		}
 	}
 
 	public function logout(){
-		return $this->redirect($this->Auth->logout());
+		return $this->redirect($this->Auth->logoutRedirect);
 	}
 
 }
