@@ -55,8 +55,6 @@ class AppController extends Controller {
 		$this->Facebook = new Facebook(array(
 			'appId' => '1450432808581768',
 			'secret' => '1cf58b7e19dabf12cb75012d5434d969'));
-
-		$this->Auth->allow('index','view');
 	}
 
 	public function beforeRender(){
