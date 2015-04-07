@@ -24,7 +24,7 @@ class UsersController extends AppController{
 
 						if ($this->User->save($data)){
 							$this->Session->setFlash(__('Welcome Manager'));
-							return $this->redirect(array('controller'=>'users','action'=>'login'));
+							return $this->redirect(array('controller'=>'users','action'=>'index'));
 						}
 					}else{
 						$this->Session->setFlash(__('Wrong Reference Code'));
@@ -52,7 +52,8 @@ class UsersController extends AppController{
 				if($role=='manager'){
 					return $this->redirect($this->Auth->loginRedirect);
 				}else{
-					return $this->redirect(array('controller'=>'clients', 'action'=>'indexe'));
+					$this->Auth->loginRedirect = array('controller'=>'clients', 'action'=>'indexe');
+					return $this->redirect($this->Auth->loginRedirect);
 				}
 			}
 			$this->Session->setFlash(__('Wrong username and password combination, please try again'));
