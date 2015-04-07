@@ -22,6 +22,12 @@ Class User extends AppModel{
 				'message' => 'Please choose a valid role',
 				'allowEmpty' => false
 			)
+		),
+		'email' => array(
+			'required' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Need a email'
+			)
 		)
 	);
 
