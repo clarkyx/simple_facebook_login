@@ -33,7 +33,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-		echo $html->script('jquery-2.1.3.js'); 
+		echo $this->Html->script('jquery-2.1.3.js'); 
 	?>
 </head>
 <body>
