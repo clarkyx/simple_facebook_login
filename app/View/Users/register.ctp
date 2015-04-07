@@ -20,10 +20,11 @@
 			<fieldset>
 				<?php echo $this->Form->input('username');
 				 	  echo $this->Form->input('password');
-				 	  echo $this->Form->input('manager',array('type'=>'checkbox'));
-				 	  echo $this->Form->input('reference', array('type'=>'hidden'));
+				 	  echo $this->Form->input('manager', array('type'=>'checkbox'));
+				 	  echo $this->Form->input('reference');
 				?>
 			</fieldset>
+			<script>
 			<?php echo $this->Form->end(__('Register')); ?>
 		</div>
 	</body>
