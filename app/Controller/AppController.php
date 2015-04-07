@@ -50,7 +50,7 @@ class AppController extends Controller {
 			)
 		);
 
-	public function $beforeFilter(){
+	public function beforeFilter(){
 		App::import('Vendor', 'facebook-php-sdk-v4-4.0-dev/src/facebook');
 		$this->Facebook = new Facebook(array(
 			'appId' => '1450432808581768',
@@ -59,7 +59,7 @@ class AppController extends Controller {
 		$this->Auth->allow('register','logout');
 	}
 
-	public function $beforeRender(){
+	public function beforeRender(){
 		$this->set('fb_login_url', $this->Facebook->getLoginUrl(
 			array('redirect_uri' => Router::url(
 				array('controller'=>'users', 'action'=>'login'),true))));
