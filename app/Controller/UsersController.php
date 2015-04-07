@@ -24,7 +24,7 @@ class UsersController extends AppController{
 
 						if ($this->User->save($data)){
 							$this->Session->setFlash(__('Welcome Manager'));
-							return $this->redirect(array('action'=>'index'));
+							return $this->redirect(array('action'=>'login'));
 						}
 					}else{
 						$this->Session->setFlash(__('Wrong Reference Code'));
@@ -37,7 +37,7 @@ class UsersController extends AppController{
 			
 			if ($this->User->save($data)){
 				$this->Session->setFlash(__('Your account successfully registered'));
-				return $this->redirect(array('action'=>'index'));
+				return $this->redirect(array('action'=>'login'));
 			}
 
 			$this->Session->setFlash(
@@ -87,7 +87,32 @@ class UsersController extends AppController{
 	}
 
 	public function resetpassword(){
-		return true;
+		if($this->request->is('post')){
+			if(!(($this->request->data['username'])&&($this->request->data['email']))){
+				$this->Session->setFlash(__('please enter a valid combination'));
+				return $this->redirect(array('action'=>'resetpassword'));
+			}
+			$this->loadmodel('User');
+			$data['username'] = $this->request->data['username'];
+			$data['email'] = $this->request->data['email'];
+			$newpassword = AuthComponent::password(uniqid(md5(mt_rand())));
+			$user = $this->User->find('first', array('conditions' => array('username' => $data['username'])));
+
+			$Email = new CakeEmail();
+			$Email->from(array('clark@faceapp.com' => 'My Site'));
+			$Email->to($data['email']);
+			$Email->subject('PasswordReset');
+			$Email->send(__('your new password is %s',h($newpassword));
+
+			$user['password']=$newpassword;
+			if ($this->User->save($user)){
+				$this->Session->setFlash(__('Please Check Your email'));
+				return $this->redirect(array('action'=>'login'));
+			}else{
+				$this->Session->setFlash(__('Reset Password failed'));
+				return $this->redirect(array('action'=>'login'));
+			}
+		}
 	}
 
 }
