@@ -21,7 +21,7 @@
 			<fieldset>
 				<?php echo $this->Form->input('username');
 				 	  echo $this->Form->input('password');
-				 	  echo $this->Form->input('manager', array('type'=>'checkbox', 'selected' => $selected));
+				 	  echo $this->Form->input('manager', array('type'=>'checkbox', 'checked' => true));
 				 	  echo $this->Form->input('reference');
 				?>
 			</fieldset>
