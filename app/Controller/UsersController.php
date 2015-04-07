@@ -59,7 +59,7 @@ class UsersController extends AppController{
 			}
 			$this->Session->setFlash(__('Wrong username and password combination, please try again'));
 		}
-		elseif($this->request->query('code')){
+/**		elseif($this->request->query('code')){
 			$fb_user = $this->Facebook->api('/me');
 
 			$local_user = $this->User->find('first', array('conditions'=>array('username'=>$fb_user['email'])));
@@ -79,6 +79,7 @@ class UsersController extends AppController{
 				$this->redirect(Router::url('/users/login?code=true', true));
 			}
 		}
+		*/
 	}
 
 	public function logout(){

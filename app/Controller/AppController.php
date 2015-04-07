@@ -50,7 +50,7 @@ class AppController extends Controller {
 			)
 		);
 
-	public function beforeFilter(){
+/**	public function beforeFilter(){
 		App::import('Vendor', 'facebook-php-sdk-v4-4.0-dev/src/Facebook');
 		$this->Facebook = new Facebook(array(
 			'appId' => '1450432808581768',
@@ -63,4 +63,5 @@ class AppController extends Controller {
 				array('controller'=>'users', 'action'=>'login'),true))));
 		$this->set('user', $this->Auth->user());
 	}
+	*/
 }
