@@ -23,6 +23,7 @@ Class User extends AppModel{
 				'allowEmpty' => false
 			)
 		)
+		'authorize' => array('Controller')
 	);
 
 	public function beforeSave($options=array()){
@@ -33,5 +34,12 @@ Class User extends AppModel{
 				);
 		}
 		return true;
+	}
+
+	public function isAuthorized($user){
+		if(isset($user['role'])&&$user['role']==='manager'){
+			return true;
+		}
+		return false;
 	}
 }

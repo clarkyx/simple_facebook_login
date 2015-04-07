@@ -47,10 +47,18 @@ class AppController extends Controller {
 					'passwordHasher' => 'Blowfish'
 					)
 				)
+			'authorize' => array('Controller')
 			)
 		);
 
 	//public function beforeFilter(){
 	//	$this->Auth->allow('')
 	//}
+
+	public function isAuthorized($user){
+		if(isset($user['role'])&&$user['role']==='manager'){
+			return true;
+		}
+		return false;
+	}
 }

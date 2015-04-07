@@ -48,7 +48,13 @@ class UsersController extends AppController{
 	public function login(){
 		if($this->request->is('post')){
 			if($this->Auth->login()){
-				return $this->redirect($this->Auth->loginRedirect);
+				$role = $this->Auth->user('role');
+				if($role=='manager'){
+					return $this->redirect($this->Auth->loginRedirect);
+				}else{
+					$this->Auth->loginRedirect = array('controller'=>'clients', 'action'=>'indexe');
+					return $this->redirect($this->Auth->loginRedirect);
+				}
 			}
 			$this->Session->setFlash(__('Wrong username and password combination, please try again'));
 		}

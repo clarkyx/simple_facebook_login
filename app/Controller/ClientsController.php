@@ -7,6 +7,10 @@ class ClientsController extends AppController{
 		$this->set('clients',$this->Client->find('all'));
 	}
 
+	public function index(){
+		$this->set('clients',$htis->CLient->find('add'));
+	}
+
 	public function newclient(){
 		if($this->request->is('post')){
 			$this->Client->create();
