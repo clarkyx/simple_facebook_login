@@ -4,6 +4,7 @@
 		<title>Login</title>
 		<script type="text/javascript">
 		$(document).ready(function(){
+
 			$('#UserManager').change(function(){
 				if($(this).is(':checked')){
 					$('#UserReference').fadeIn();
@@ -20,7 +21,7 @@
 			<fieldset>
 				<?php echo $this->Form->input('username');
 				 	  echo $this->Form->input('password');
-				 	  echo $this->Form->input('manager', array('type'=>'checkbox'));
+				 	  echo $this->Form->input('manager', array('type'=>'checkbox', 'selected' => $selected));
 				 	  echo $this->Form->input('reference');
 				?>
 			</fieldset>
