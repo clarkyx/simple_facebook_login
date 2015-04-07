@@ -32,6 +32,10 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
+
+/**
+* Set up base login redirect urls and hash function
+*/
 class AppController extends Controller {
 	public $components = array(
 		'Session',

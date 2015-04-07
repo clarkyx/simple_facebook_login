@@ -1,3 +1,4 @@
+<!--Client Information View for Employee-->
 <!DOCTYPE html>
 <meta content="utf-8" http-equiv="encoding">
 <html>
@@ -6,6 +7,7 @@
 	</head>
 	<body>
 		<table>
+			<!--Employee can only view client information-->
 			<tr>
 				<th>Id</th>
 				<th>CompanyName</th>

@@ -1,3 +1,4 @@
+<!--Client Information View for Manager-->
 <!DOCTYPE html>
 <meta content="utf-8" http-equiv="encoding">
 <html>
@@ -11,6 +12,7 @@
 				<th>CompanyName</th>
 				<th>Address</th>
 				<th>Phone</th>
+				<!--Manager can perform actions on client-->
 				<th>Actions</th>
 			</tr>
 

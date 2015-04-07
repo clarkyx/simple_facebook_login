@@ -1,7 +1,16 @@
 <?php
 App::uses('AppModel','Model');
 App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
-
+/**
+* Basic user model
+*
+* User model includes two main parts: 
+* Part one: user information validation
+* 	username: required
+* 	password: required
+* 	role : manager|employee
+* Part two: password blowfish hash
+*/
 Class User extends AppModel{
 	public $validate = array(
 		'username' => array(

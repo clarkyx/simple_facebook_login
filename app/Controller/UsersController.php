@@ -1,5 +1,12 @@
 <?php
-App::uses('AppController', 'Controller');
+/**
+* UsersController is responsible for login pages
+* 
+* UsersController has multiple functionalities which includes:
+* -Register a new user(employee|manager)
+* -Local Login, Facebook Login(unfinished), Logout
+* -passwordreset(unfinished)
+*/
 
 class UsersController extends AppController{
 	public function beforeFilter(){
@@ -11,6 +18,15 @@ class UsersController extends AppController{
 		$this->set('users', $this->paginate());
 	}
 
+	/**
+	* Register a new account
+	*
+	* By using register(), user can register account with either manager role
+	* or employee role. Manager accounts need to provide reference code 
+	* (current code is 111).
+	*
+	*@return redirect to login page if account registration is succeed
+	*/
 	public function register(){
 		if($this->request->is('post')){
 			$this->User->create();
@@ -44,7 +60,15 @@ class UsersController extends AppController{
 				__('Account creation failed, please try again'));
 		}
 	}
-
+	/**
+	* Login as a user
+	*
+	* By using login(), user can access the client information, but only
+	* manager can perform actions on client information. 
+	*
+	*@return redirect to index page if account registration is succeed
+	*@Added facebook login(not fully functional)
+	*/
 	public function login(){
 		if($this->request->is('post')){
 			if($this->Auth->login()){
@@ -81,11 +105,22 @@ class UsersController extends AppController{
 		}
 		*/
 	}
-
+	/**
+	* Logout current session
+	*/
 	public function logout(){
 		return $this->redirect($this->Auth->logoutRedirect);
 	}
 
+	/**
+	* Reset Password(not fully functional)
+	*
+	* By using resetpassword(), user can reset the account password, system
+	* will auto generate a hashed password and send to user through email
+	*
+	*@return redirect to index page if account registration is succeed
+	*@Added facebook login(not fully functional)
+	*/
 	public function resetpassword(){
 		if($this->request->is('post')){
 			if(!(($this->request->data['username'])&&($this->request->data['email']))){

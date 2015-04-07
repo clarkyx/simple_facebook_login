@@ -1,3 +1,6 @@
+<!--Login Page-->
+<!--ResetPassword not fully functional-->
+
 <!DOCTYPE html>
 <html>
 	<head>

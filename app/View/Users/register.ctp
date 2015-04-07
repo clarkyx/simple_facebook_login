@@ -1,3 +1,6 @@
+<!--Register Account Page -->
+<!--Manager need to provide extra reference code-->
+
 <!DOCTYPE html>
 <meta content="utf-8" http-equiv="encoding">
 <html>

@@ -1,3 +1,4 @@
+<!--ResetPassword Page-->
 <!DOCTYPE html>
 <html>
 	<head>
