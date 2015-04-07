@@ -51,7 +51,8 @@ class UsersController extends AppController{
 				$role = $this->Auth->user('role');
 				if($role=='manager'){
 					$this->Auth->loginRedirect = array('controller'=>'clients', 'action'=>'index');
-				}else{
+				}
+				if($role=='employee'){
 					$this->Auth->loginRedirect = array('controller'=>'clients', 'action'=>'indexe');
 				}
 				return $this->redirect($this->Auth->loginRedirect);
