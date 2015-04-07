@@ -98,6 +98,11 @@ class UsersController extends AppController{
 			$newpassword = AuthComponent::password(uniqid(md5(mt_rand())));
 			$user = $this->User->find('first', array('conditions' => array('username' => $data['username'])));
 
+			if(!$user){
+				$this->Session->setFlash(__('please enter a valid combination'));
+				return $this->redirect(array('action'=>'resetpassword'));
+			}
+
 			$Email = new CakeEmail();
 			$Email->from(array('clark@faceapp.com' => 'My Site'));
 			$Email->to($data['email']);
@@ -113,8 +118,7 @@ class UsersController extends AppController{
 				return $this->redirect(array('action'=>'login'));
 			}
 		}
-			$this->Session->setFlash(__('SOMETHIGN WRONG HERE'));
-
+		$this->Session->setFlash(__('SOMETHIGN WRONG HERE'));
 	}
 
 }
