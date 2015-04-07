@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<meta content="utf-8" http-equiv="encoding">
 <html>
 	<head>
+		<meta content="utf-8" http-equiv="encoding">
 		<title>Login</title>
 	</head>
 	<body>
