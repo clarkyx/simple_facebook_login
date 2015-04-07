@@ -24,7 +24,7 @@ class UsersController extends AppController{
 
 						if ($this->User->save($data)){
 							$this->Session->setFlash(__('Welcome Manager'));
-							return $this->redirect(array('action'=>'index'));
+							return $this->redirect(array('controller'=>'users','action'=>'login'));
 						}
 					}else{
 						$this->Session->setFlash(__('Wrong Reference Code'));
@@ -37,7 +37,7 @@ class UsersController extends AppController{
 			
 			if ($this->User->save($data)){
 				$this->Session->setFlash(__('Your account successfully registered'));
-				return $this->redirect(array('action'=>'index'));
+				return $this->redirect(array('controller'=>'users','action'=>'login'));
 			}
 
 			$this->Session->setFlash(
