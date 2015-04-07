@@ -7,7 +7,7 @@ class ClientsController extends AppController{
 		$this->set('clients',$this->Client->find('all'));
 	}
 
-	public function index(){
+	public function indexe(){
 		$this->set('clients',$htis->CLient->find('add'));
 	}
 
