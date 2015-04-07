@@ -51,7 +51,7 @@ class AppController extends Controller {
 		);
 
 	public function beforeFilter(){
-		App::import('Vendor', 'facebook-php-sdk-v4-4.0-dev/src/facebook');
+		App::import('Vendor', 'facebook-php-sdk-v4-4.0-dev/src/Facebook');
 		$this->Facebook = new Facebook(array(
 			'appId' => '1450432808581768',
 			'secret' => '1cf58b7e19dabf12cb75012d5434d969'));

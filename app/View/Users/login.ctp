@@ -13,7 +13,6 @@
 			</fieldset>
 			<?php echo $this->Form->end(__('Login')); ?>
 			<?php echo $this->Html->link('register', array('controller'=>'users', 'action'=>'register')); ?>
-			<?php echo $this->Html->link('Facebook Login', $fb_login_url);  ?>
 		</div>
 	</body>
 </html>
