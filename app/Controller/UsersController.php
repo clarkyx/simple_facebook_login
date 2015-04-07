@@ -86,4 +86,8 @@ class UsersController extends AppController{
 		return $this->redirect($this->Auth->logoutRedirect);
 	}
 
+	public function resetpassword(){
+		return true;
+	}
+
 }
