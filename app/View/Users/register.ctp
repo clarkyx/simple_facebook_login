@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta content="utf-8" http-equiv="encoding">
 <html>
 	<head>
 		<title>Login</title>
@@ -26,6 +27,7 @@
 				?>
 			</fieldset>
 			<?php echo $this->Form->end(__('Register')); ?>
+
 		</div>
 	</body>
 </html>
