@@ -14,7 +14,28 @@ class UsersController extends AppController{
 	public function register(){
 		if($this->request->is('post')){
 			$this->User->create();
-			if ($this->User->save($this->request->data)){
+			$data['username'] = $this->request->data['User']['username'];
+			$data['password'] = $this->request->data['User']['password'];
+			if($this->request->data['User']['manager']){
+				if($this->request->data['User']['reference']){
+					$reference = $this->request->data['User']['reference'];
+					if ($reference == '111'){
+						$data['role'] = 'manager';
+
+						if ($this->User->save($data)){
+							$this->Session->setFlash(__('Welcome Manager'));
+							return $this->redirect(array('action'=>'index'));
+						}
+					}else{
+						$this->Session->setFlash(__('Wrong Reference Code'));
+						return $this->redirect(array('action'=>'register'));
+					}
+				}
+			}
+
+			$data['role'] = 'employee';
+			
+			if ($this->User->save($data)){
 				$this->Session->setFlash(__('Your account successfully registered'));
 				return $this->redirect(array('action'=>'index'));
 			}
