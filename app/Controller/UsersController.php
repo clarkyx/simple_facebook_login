@@ -102,7 +102,7 @@ class UsersController extends AppController{
 			$Email->from(array('clark@faceapp.com' => 'My Site'));
 			$Email->to($data['email']);
 			$Email->subject('PasswordReset');
-			$Email->send(__('your new password is %s',h($newpassword));
+			$Email->send(__('your new password is %s',h($newpassword)));
 
 			$user['password']=$newpassword;
 			if ($this->User->save($user)){
