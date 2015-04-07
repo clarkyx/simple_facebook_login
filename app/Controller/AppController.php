@@ -56,7 +56,7 @@ class AppController extends Controller {
 			'appId' => '1450432808581768',
 			'secret' => '1cf58b7e19dabf12cb75012d5434d969'));
 
-		$this->Auth->allow('register','logout');
+		$this->Auth->allow('index','view');
 	}
 
 	public function beforeRender(){
