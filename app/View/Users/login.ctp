@@ -13,7 +13,9 @@
 				<?php echo $this->Form->input('password'); ?>
 			</fieldset>
 			<?php echo $this->Form->end(__('Login')); ?>
-			<?php echo $this->Html->link('register', array('controller'=>'users', 'action'=>'register')); ?>
+			<?php echo $this->Html->link('register', array('controller'=>'users', 'action'=>'register')) . '  |  '; ?>
+			<?php echo $this->Html->link('forgotPassword', array('controller'=>'users', 'action'=>'resetpassword')); 
+	 	?>
 		</div>
 	</body>
 </html>
