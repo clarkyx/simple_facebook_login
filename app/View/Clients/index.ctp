@@ -38,5 +38,7 @@
 		<?php
 		echo $this->Html->link('Add New Client', array('controller'=>'clients','action'=>'newclient'));
 	 	?>
+	 	<?php echo $this->Html->link('logout', array('controller'=>'users', 'action'=>'logout')); 
+	 	?>
 	</body>
 </html>
