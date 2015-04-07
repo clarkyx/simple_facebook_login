@@ -25,7 +25,6 @@
 				 	  echo $this->Form->input('reference');
 				?>
 			</fieldset>
-			<script>
 			<?php echo $this->Form->end(__('Register')); ?>
 		</div>
 	</body>
