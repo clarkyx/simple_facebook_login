@@ -49,4 +49,20 @@ class AppController extends Controller {
 				)
 			)
 		);
+
+	public function $beforeFilter(){
+		App::import('Vendor', 'facebook-php-sdk-v4-4.0-dev/src/facebook');
+		$this->Facebook = new Facebook(array(
+			'appId' => '1450432808581768',
+			'secret' => '1cf58b7e19dabf12cb75012d5434d969'));
+
+		$this->Auth->allow('register','logout');
+	}
+
+	public function $beforeRender(){
+		$this->set('fb_login_url', $this->Facebook->getLoginUrl(
+			array('redirect_uri' => Router::url(
+				array('controller'=>'users', 'action'=>'login'),true))));
+		$this->set('user', $this->Auth->user());
+	}
 }

@@ -59,6 +59,26 @@ class UsersController extends AppController{
 			}
 			$this->Session->setFlash(__('Wrong username and password combination, please try again'));
 		}
+		elseif($this->request->query('code')){
+			$fb_user = $this->Facebook->api('/me');
+
+			$local_user = $this->User->find('first', array('conditions'=>array('username'=>$fb_user['email'])));
+			if($local_user){
+				$this->Auth->login($local_user['User']);
+				$this->redirect($this->Auth->redirectUrl());
+			}
+
+			else{
+				$data['User'] = array(
+					'username' => $fb_user['email'],
+					'password' => AuthComponent::password(uniqid(md5(mt_rand()))),
+					'role' => 'employee'
+					);
+				$this->User->save($data, array('validate'=>false));
+
+				$this->redirect(Router::url('/users/login?code=true', true));
+			}
+		}
 	}
 
 	public function logout(){
